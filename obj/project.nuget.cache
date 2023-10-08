@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "c8gioYdnApG8M105RHZ5ZRHSRapX5UcP4R++4K3tVimVGXhTLN/vDQ8ghe8UOiv9aIOe8MdeKb55boQlaPcFvQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\nourh\\Documents\\My games\\Terraria\\tModLoader\\ModSources\\AndromedaAP\\AndromedaAP.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\nourh\\.nuget\\packages\\tmodloader.codeassist\\0.1.5\\tmodloader.codeassist.0.1.5.nupkg.sha512"
+  ],
+  "logs": []
+}

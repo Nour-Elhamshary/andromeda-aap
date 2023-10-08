@@ -1,0 +1,31 @@
+# This file will automatically update with entries for new content after a build and reload
+
+Items: {
+	TutorialSword: {
+		DisplayName: Gaming Sword
+		Tooltip: We are going to do GAMING!
+	}
+
+	AndromedaAeropack: {
+		DisplayName: 仙女座喷气背包
+		Tooltip:
+			'''
+			可在宇宙中飞行的强大的喷气背包
+
+			水平飞行速度：9.50
+			加速倍率：2.5
+			优异的垂直飞行速度
+			飞行时间：250
+
+			同时按住“上”键和“下”键可以积累升空值并暂时禁止飞行
+			在升空值充能过程中尝试飞行会终止充能
+			在升空值充满后进行飞行会释放出星云爆压，推动你飞向深空
+			穿 越 宇 宙
+
+			穿着异宇星凝盔甲时提高5%伤害和暴击率
+			"总有一天，爱会找到你的！"
+			'''
+	}
+}
+
+Projectiles.NebulaLiftoff.DisplayName: 星云爆压

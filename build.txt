@@ -1,0 +1,4 @@
+displayName = Andromeda Aeropack for Catalyst
+author = Lighty
+version = 0.4
+modReferences = CatalystMod

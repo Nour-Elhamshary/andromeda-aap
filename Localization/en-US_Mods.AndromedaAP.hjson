@@ -1,0 +1,33 @@
+# This file will automatically update with entries for new content after a build and reload
+
+Items: {
+	TutorialSword: {
+		DisplayName: Gaming Sword
+		Tooltip: We are going to do GAMING!
+	}
+
+	AndromedaAeropack: {
+		DisplayName: Andromeda Aeropack
+		Tooltip:
+			'''
+			A very powerful cosmic jetpack.
+
+			Horizontal speed: 9.50
+			Acceleration multiplier: 2.5
+			Great vertical speed
+			Flight time: 250
+
+			Holding UP+DOWN charges your Liftoff meter and temporarily disallows flight.
+			Trying to fly/dash while the Liftoff is not fully charged will cancel it instead.
+			If your Liftoff meter is full and you fly, it lets out an explosion to propel you
+			through the cosmos.
+
+			Dashing while liftoff is full will instead extend your shield dash by a good amount.
+
+			5% extra damage and extra crit chance when wearing the Intergelactic armor
+			"Someday, love will find you!"
+			'''
+	}
+}
+
+Projectiles.NebulaLiftoff.DisplayName: Nebula Liftoff

@@ -1,0 +1,18 @@
+You have landed the final hit to the multidimensional destroyer, you see it writhe and collapse onto itself from how unstable it is getting at every second, trying to hold on to existence itself. But alas, it bursts open and letting out such a spectacular explosion, scattering nebulae all around you, and finally leaving you with its items. Fast foward, you have started to explore deep into the astral mines, getting to witness such glorious cosmic ores grouping themselves in galaxy shaped veins. You process those ores to contain the bars that is said to have an entire universe compressed within such ingots. You look at your dusty jetpack that you bought from a lady not that long ago, and you decide to combine the two together...
+
+Fables have said about a legendary jetpack that could rip through the cosmos and fly through Andromeda itself. You may have turned such fable into a reality.
+
+Andromeda Aeropack for Catalyst is a fan addon that serves exactly one purpose: Adding an Intergelactic-tier flight accessory for Catalyst. It is *not* an official addon, and it's just coming from a guy that really loves the mod so much. <3
+
+Requires Catalyst mod (and by extension, Calamity mod.)
+
+Credits:
+Lighty for uh, making the mod, duh.....
+freesound.org for free sounds! More specifically:
+	- Jetpack thrust by Maxx222
+	- Liftoff launch by C3Sabertooth
+Catalyst devs for making the amazing mod that allowed me to make the wing in the first place
+	- Special thanks to YuH for really helping me at points when I was truly stuck
+Calamity devs for making Calamity in general. (and uh, also for the *ding!* sound effect from Ark (can't find a better ding than that :<))
+Lastprismer for his generous contribution to the Chinese translation!
+Seasalt for a very, VERY generous contribution to new Aeropack sprites!
