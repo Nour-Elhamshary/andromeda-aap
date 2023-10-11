@@ -1,22 +1,16 @@
 ﻿using Terraria;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
-using CatalystMod.Projectiles.Magic;
 using CatalystMod.Items.Materials;
 using CatalystMod.Items;
 using CatalystMod;
-using AndromedaAP.UI;
 using AndromedaAP.Players;
-using Terraria.GameInput;
 using CatalystMod.Items.Armor.Intergelactic;
 using AndromedaAP.Projectiles;
 using Terraria.Audio;
 using Terraria.ID;
 using CatalystMod.Items.Potions;
 using ReLogic.Utilities;
-using System.Linq;
-using System;
-using CalamityMod.CalPlayer;
 
 namespace AndromedaAP.Items.Equips.Wings
 {
@@ -40,7 +34,8 @@ namespace AndromedaAP.Items.Equips.Wings
 
 
 
-        //Function that checks if the player is flying in general, courtesy of absoluteAquarium
+        //Function that checks if the player is flying in general similar to vanilla
+        //courtesy of absoluteAquarium
         void checkIfPlayerFlies(AAPEquippedPlayer modWingPlayer)
         {
             //Basically it checks if he wears any vanilla wings, and checks if he holds jump
@@ -77,20 +72,23 @@ namespace AndromedaAP.Items.Equips.Wings
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
             
+            //Add your modPlayers, one for Andropack, one for metaball, and one for catalyst 
             var modWingPlayer = player.GetModPlayer<AAPEquippedPlayer>();
             ParticlePlayer modPlayer = ParticlePlayer.ModPlayer(player);
             CatalystPlayer catPlayer = CatalystPlayer.ModPlayer(player);
 
-            //Needed this to check on the dash (thank you clamty mod)
-
             checkIfPlayerFlies(modWingPlayer);
 
-            //Main.NewText("updateaccessory flag21: " + modWingPlayer.flag21.ToString());
             //If updating accessory it means its equipped, set it to true !
             player.GetModPlayer<AAPEquippedPlayer>().isEquipped = true;
 
             //A single boolean to check if the player has any intergelactic head set
-            bool intergelacticHead = (player.armor[0].type == ModContent.ItemType<IntergelacticHeadMagic>() || player.armor[0].type == ModContent.ItemType<IntergelacticHeadMelee>() || player.armor[0].type == ModContent.ItemType<IntergelacticHeadRanged>() || player.armor[0].type == ModContent.ItemType<IntergelacticHeadRogue>() || player.armor[0].type == ModContent.ItemType<IntergelacticHeadSummon>());
+            bool intergelacticHead = (player.armor[0].type == ModContent.ItemType<IntergelacticHeadMagic>() 
+                || player.armor[0].type == ModContent.ItemType<IntergelacticHeadMelee>() 
+                || player.armor[0].type == ModContent.ItemType<IntergelacticHeadRanged>() 
+                || player.armor[0].type == ModContent.ItemType<IntergelacticHeadRogue>() 
+                || player.armor[0].type == ModContent.ItemType<IntergelacticHeadSummon>()
+                );
 
             //If the player wears intergelactic armor, give him the bonuses! 5% crit and 5% damage
             if (intergelacticHead && player.armor[1].type == ModContent.ItemType<IntergelacticBreastplate>() && player.armor[2].type == ModContent.ItemType<IntergelacticGreaves>())
@@ -113,31 +111,35 @@ namespace AndromedaAP.Items.Equips.Wings
                         float quotient = modWingPlayer.currentLiftoff / modWingPlayer.maxLiftoff;
                         quotient = Utils.Clamp(quotient, 0f, 1f);
 
-                        //Boom sound
-                        //
 
-                        //500 typeless damage explosion
+
+                        //Another magnum opus...
+                        //Basically, make the funny smoke rings with size differing from how low the boost charge is.
                         if (quotient == 1f && !(player.dashDelay == -1)) Projectile.NewProjectile(player.GetSource_FromThis(), player.Center, Vector2.Zero, ModContent.ProjectileType<NebulaLiftoff>(), 500, 0f, player.whoAmI, -1f);
                         modPlayer.foamParticleList1.Add(new NebulaFoam(Vector2.Subtract(player.Center, amountToSubtract), Vector2.Zero, 2f * quotient, noMovement: true, 0.99f));
 
                         if ((player.dashDelay == -1 && quotient == 1.0f) || quotient == 0.75f || quotient == 0.5f || quotient == 0.25f) { 
                             for (int  i = 0; i < 360; i++) {
+                                //Length...
                                 float length = Main.rand.NextFloat(8f, 10f);
+                                //Funny circle!!
                                 Vector2 circular = new Vector2(length, 0f).RotatedBy(MathHelper.ToRadians(i));
+                                //If the guy is dashing, flip the rings vertically
                                 if (player.dashDelay == -1 || player.dashDelay > 0) { 
                                 circular.Y *= quotient;
                                 circular.X *= 0.25f * quotient;
                                 } 
-                                else
+                                else //Do it horizontally otherwise
                                 {
                                 circular.Y *= (0.25f * quotient);
                                 circular.X *= quotient;
                                 }
+                                //Add the metaball
                                 modPlayer.foamParticleList1.Add(new NebulaFoam(Vector2.Subtract(player.Center, new Vector2(15f,0f)), circular, Main.rand.NextFloat(0.9f, 1.2f), noMovement: true, 0.99f));
                             }
                         }
-                        //fling!
 
+                        //fling! (usually vertically, but if dashed then horizontally)
                         if (quotient == 1f)
                         {
                             SoundEngine.SoundPlayer.Play(in liftoffExplosion);
@@ -159,18 +161,12 @@ namespace AndromedaAP.Items.Equips.Wings
         public override bool WingUpdate(Player player, bool inUse)
         {
             
-            //Main.NewText("inUse: " + inUse.ToString());
             //Get the AAPEquippedPlayer so that we know the liftoff charge and if its even equipped
             //(important for UI)
             var modWingPlayer = Main.LocalPlayer.GetModPlayer<AAPEquippedPlayer>();
 
-            
-
             //Set the players
             ParticlePlayer modPlayer = ParticlePlayer.ModPlayer(player);
-
-
-
 
             //While the player is flying (and not discharging (hehe))...
             if (inUse == true && !modWingPlayer.liftoffDischarge)
@@ -181,9 +177,7 @@ namespace AndromedaAP.Items.Equips.Wings
                     andromedaThrustId = SoundEngine.PlaySound(in thrust);
                 } 
 
-                
 
-                
                 //amountToSubtract helps in setting the direction of the meta flame 
                 Vector2 amountToSubtract;
                 if (player.direction == 1) amountToSubtract = new Vector2(15, 0);
@@ -219,7 +213,7 @@ namespace AndromedaAP.Items.Equips.Wings
                                                 ref float maxCanAscendMultiplier, ref float maxAscentMultiplier, 
                                                 ref float constantAscend)
         {
-            var modWingPlayer = Main.LocalPlayer.GetModPlayer<AAPEquippedPlayer>(); 
+
                 ascentWhenFalling = 0.85f;
                 ascentWhenRising = 0.15f;
                 maxCanAscendMultiplier = 1f;
