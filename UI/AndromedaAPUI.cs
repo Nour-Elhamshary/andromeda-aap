@@ -3,12 +3,8 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria.UI;
 using Terraria;
 using Terraria.ModLoader;
-using System;
-using System.Security.Cryptography.X509Certificates;
-using System.Collections.Generic;
 using AndromedaAP.Players;
 using Terraria.GameContent.UI.Elements;
-using Terraria.GameContent;
 
 namespace AndromedaAP.UI
 {
@@ -72,7 +68,7 @@ namespace AndromedaAP.UI
             starbox.Width = trailbox.Width = 6;
 
             //Then load in the textures for trail and star (and even when the bar itself turns pink)
-            Texture2D trail = (Texture2D)ModContent.Request<Texture2D>("AndromedaAP/UI/trail2");
+            Texture2D trail = (Texture2D)ModContent.Request<Texture2D>("AndromedaAP/UI/trail");
             Texture2D star = (Texture2D)ModContent.Request<Texture2D>("AndromedaAP/UI/head");
             Texture2D pink = (Texture2D)ModContent.Request<Texture2D>("AndromedaAP/UI/emptbarpink");
 

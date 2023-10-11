@@ -1,22 +1,16 @@
 ﻿using Terraria;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
-using CatalystMod.Projectiles.Magic;
 using CatalystMod.Items.Materials;
 using CatalystMod.Items;
 using CatalystMod;
-using AndromedaAP.UI;
 using AndromedaAP.Players;
-using Terraria.GameInput;
 using CatalystMod.Items.Armor.Intergelactic;
 using AndromedaAP.Projectiles;
 using Terraria.Audio;
 using Terraria.ID;
 using CatalystMod.Items.Potions;
 using ReLogic.Utilities;
-using System.Linq;
-using System;
-using CalamityMod.CalPlayer;
 
 namespace AndromedaAP.Items.Equips.Wings
 {

@@ -1,11 +1,4 @@
 ﻿using AndromedaAP.UI;
-using CalamityMod;
-using CalamityMod.Tiles.FurnitureVoid;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Terraria;
 using Terraria.Audio;
 using Terraria.GameInput;

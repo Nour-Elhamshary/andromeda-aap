@@ -1,15 +1,7 @@
 ﻿using Terraria;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
-using CatalystMod.Projectiles.Magic;
-using CatalystMod.Items.Materials;
-using CatalystMod.Items;
 using CatalystMod;
-using AndromedaAP.UI;
-using AndromedaAP.Players;
-using Terraria.GameInput;
-using System;
-using CalamityMod.Tiles.FurnitureVoid;
 
 namespace AndromedaAP.Projectiles
 {
