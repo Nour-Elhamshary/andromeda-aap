@@ -23,6 +23,7 @@ namespace AndromedaAP.Players
         maxLiftoff is the maximum amount to charge until liftoff
         currentLiftoff is how many liftoff charge is available.
         liftoffCharge is a boolean to check if UP+DOWN are pressed.
+        liftoffDischarge is a boolen to check if liftoff is decreasing continuously.
         */
         
         public float maxLiftoff = 20f;
@@ -87,12 +88,15 @@ namespace AndromedaAP.Players
 
         }
 
-        //Set the visibility of the bar depending on if the wing is equipped or not.
         public override void PostUpdateEquips() {
 
+            //If UP+DOWN is pressed, then its charging!!!
             if (PlayerInput.Triggers.Current.Up && PlayerInput.Triggers.Current.Down) liftoffCharge = true;
 
+            //While its charging:
             if (liftoffCharge) { 
+                //Set the wingTimeMax and wingTime to zero, and since WingTime won't be changed for a long
+                //bit while liftoff is charged, set that to false.
                 Main.LocalPlayer.wingTimeMax = 0; Main.LocalPlayer.wingTime = 0; hasWingTimeChanged = false;
                 //Charge the liftoff...
                 currentLiftoff += 1f / 10f;
@@ -113,6 +117,8 @@ namespace AndromedaAP.Players
 
             }
 
+
+            //See if the wing is equipped. If yes, show the Liftoff UI, if not, then don't show it! :provg:
             if (isEquipped == true) ModContent.GetInstance<AndromedaAPUISystem>().showLiftoffBar();
             else ModContent.GetInstance<AndromedaAPUISystem>().hideLiftoffBar();
         }
