@@ -20,7 +20,7 @@ Requires Catalyst mod (and by extension, Calamity mod.)
 - Seasalt for a very, VERY generous contribution to new Aeropack sprites!
 
 ## Github
-The mod is considered as open-source mod, as per GPL v3.0 license. There are no intentions of stealing any copyrighted work, and the mod has been made with permission to Catalyst developers.
+The mod is considered as open-source mod, as per GPL v3.0 license. There are no intentions of stealing any copyrighted work, and the mod has been made with permission from Catalyst developers.
 
 ## Downloads
 For an always up-to-date mod, it is _very_ recommended to be downloaded through [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3041937680). There may be releases done through Github, but it may be out of date.
